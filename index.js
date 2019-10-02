@@ -20,7 +20,7 @@ spinner.setSpinnerString('|/-\\')
 spinner.start()
 
 if (cluster.isMaster){
-    for(var i = 0; i <= numCPUs; i++){
+    for(var i = 0; i < numCPUs; i++){
         var worker = cluster.fork()
         worker.on('message', function(msg) {
             console.log(msg);
