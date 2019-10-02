@@ -15,17 +15,29 @@ if(argv.v === undefined){
     vanity = argv.v
 }
 
-var spinner = new Spinner('Searching for vanity address starting with "' + vanity + '" %s')
-spinner.setSpinnerString('|/-\\')
-spinner.start()
+var core = ''
+if(argv.c === undefined){
+    core = numCPUs
+}else{
+    core = parseInt(argv.c)
+}
+
 
 if (cluster.isMaster){
-    for(var i = 0; i < numCPUs; i++){
+
+    for(var i = 1; i <= core; i++){
+        console.log('RUNNING PROCESS ON CORE #' + i)
         var worker = cluster.fork()
         worker.on('message', function(msg) {
+            console.log()
             console.log(msg);
         });
     }
+
+    var spinner = new Spinner('Searching for vanity address starting with: ' + vanity)
+    spinner.setSpinnerString(18)
+    spinner.start()
+    console.log()
 }else if (cluster.isWorker) {
     var check = -1
     while(check !== 0){
