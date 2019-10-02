@@ -1,0 +1,23 @@
+{
+  "name": "scrypta-vanity-address",
+  "version": "1.0.0",
+  "description": "Generate Scrypta vanity addresses with NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scryptachain/scrypta-vanity-address.git"
+  },
+  "author": "Scrypta Task Force",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scryptachain/scrypta-vanity-address/issues"
+  },
+  "homepage": "https://github.com/scryptachain/scrypta-vanity-address#readme",
+  "dependencies": {
+    "coinkey": "^3.0.0",
+    "minimist": "^1.2.0"
+  }
+}
