@@ -37,7 +37,6 @@ if (cluster.isMaster){
     var spinner = new Spinner('Searching for vanity address starting with: ' + vanity)
     spinner.setSpinnerString(18)
     spinner.start()
-    console.log()
 }else if (cluster.isWorker) {
     var check = -1
     while(check !== 0){
